@@ -3,7 +3,7 @@ var router = require("./router");
 var requestHandler = require("./requestHandler");
 
 //Collection of handles
-var handle{}
+var handle = {};
 
 handle["/"] = requestHandler.start;
 handle["/start"] = requestHandler.start;

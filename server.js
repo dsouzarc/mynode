@@ -5,9 +5,10 @@ function start(route, handle) {
 	function onRequest(request, response) { 
 		var pathName = url.parse(request.url).pathname;
 		console.log("Received request: " + pathName);
-		route(handle, pathName);
+		
+		var content = route(handle, pathName);
 		response.writeHead(200, {"Content-Type": "text/plain"});
-		response.write("From start()");
+		response.write("From start(): " + content);
 		response.end();
 	}
 
